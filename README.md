@@ -2,15 +2,20 @@
 
 You can either use stack commands directly (see the [Stack Cheat Sheet](#stack-cheat-sheet) in this README) or you can use the shorter versions proposed in the `Makefile`.
 
+The `Makefile` makes life easier for profiling and uses workarounds for various `stack`bugs. It can be used with several executables, benchmarks or tests.
+
 ## TODO list for creating new package
 
+1. Change the LICENSE
 1. Edit `package.yaml` with your package info
+1. Find and replace `stack-template` with `my-package`
+1. Rename the folder `app/stack-template-exe` to `my-package-exe` (this will be the default executable used for `make run`)
 1. Edit `CHANGELOG.md`
 1. Edit the stack resolver to the latest LTS in `stack.yaml`
 
 ## Using Make
 
-You can change the default for the variables `trg` (target), `tst` (test), `pkg`, `exe` and `bch` (bench) in the Makefile.
+You can change the default for the variables `trg` (target), `tst` (test), `pkg`, `exe` (default executable) and `bch` (bench) in the Makefile.
 
 ### Building and running
 ```
