@@ -2,7 +2,7 @@
 
 You can either use stack commands directly (see the [Stack Cheat Sheet](#stack-cheat-sheet) in this README) or you can use the shorter versions proposed in the `Makefile`.
 
-The `Makefile` makes life easier for profiling and uses workarounds for various `stack`bugs. It can be used with several executables, benchmarks or tests.
+The `Makefile` makes life easier for profiling and uses workarounds for various `stack` bugs. It can be used with several executables, benchmarks or tests.
 
 ## TODO list for creating new package
 
