@@ -1,21 +1,40 @@
-# A ready to use Stack template for Haskell
+# Stack Cheat Sheet
 
-## Usage
+### Build :
 
-* Specific targets :
+```
+stack build
+```
+
+### Run :
+```
+stack exec hello
+```
+
+### Build and run :
+```
+stack build --exec hello
+```
+
+### Test :
+```
+stack test
+```
+
+### Specific targets :
 
 Find out about all the targets :
 ```
 stack ide targets
 ```
 
-* GHCi on a specific target :
+### GHCi on a specific target :
 
 ```
 stack ghci stack-template:test:stack-template-test
 ```
 
-* IDE :
+### GHCID :
 
 ```
 ghcid --command "stack ghci stack-template:test:stack-template-test"
@@ -23,27 +42,9 @@ ghcid --command "stack ghci stack-template:test:stack-template-test"
 
 Use specific target to use `ghcid` on tests or benchmark.
 
-* Build :
-```
-stack build
-```
 
-* Run :
-```
-stack exec hello
-```
 
-* Build and run :
-```
-stack build --exec hello
-```
-
-* Test :
-```
-stack test
-```
-
-* Benchmark :
+### Benchmark :
 ```
 stack bench --ba "--output bench.html"
 ```
@@ -55,7 +56,7 @@ Workaround :
 chcp 65001
 ```
 
-* Profiling :
+### Profiling :
 
 ```
 stack --work-dir .stack-work-profile  build --profile
