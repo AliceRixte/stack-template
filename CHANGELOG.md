@@ -1,4 +1,4 @@
-# Changelog for `tiles`
+# Changelog for `stack-template`
 
 All notable changes to this project will be documented in this file.
 
