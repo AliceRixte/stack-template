@@ -1,0 +1,86 @@
+name:                stack-template
+version:             0.0.0
+github:              "AliceRixte/stack-template"
+license:             BSD3
+author:              "Alice Rixte"
+maintainer:          "alice.rixte@u-bordeaux.fr"
+copyright:           "BSD3"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            media
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/AliceRixte/stack-template#readme>
+
+dependencies:
+- base >= 4.18 && < 5
+
+
+ghc-options:
+  - -Wall
+  - -threaded
+
+default-extensions:
+  - GeneralizedNewtypeDeriving
+  # - FunctionalDependencies
+  # - MultiParamTypeClasses
+  # - FlexibleContexts
+  # - FlexibleInstances
+  # - StandaloneDeriving
+  # - ScopedTypeVariables
+  # - UndecidableInstances
+  # - MonoLocalBinds
+  # - DataKinds
+  # - TypeOperators
+  # - TypeFamilies
+  # - OverloadedLabels
+
+# tested-with: GHC ==9.8.2
+
+library:
+  ghc-options:
+  - -O1
+
+  source-dirs: src
+
+executables:
+  hello:
+    main:                hello.hs
+    source-dirs:         app
+    ghc-options:
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - stack-template
+
+tests:
+  stack-template-test:
+    main:                Spec.hs
+    dependencies:
+    - stack-template
+    - hspec >= 2.11
+    - QuickCheck >= 2.14.3
+    source-dirs:         test
+    ghc-options:
+      - -O0
+      - -rtsopts
+      - -with-rtsopts=-N
+
+benchmarks:
+  stack-template-bench:
+    main: Main.hs
+    dependencies:
+      - stack-template
+      - criterion >= 1.6
+    source-dirs: benchmark
+    ghc-options:
+      - -O2
+      - -rtsopts
+      - -with-rtsopts=-N

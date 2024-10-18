@@ -1,0 +1,66 @@
+# A ready to use Stack template for Haskell
+
+## Usage
+
+* Specific targets :
+
+Find out about all the targets :
+```
+stack ide targets
+```
+
+* GHCi on a specific target :
+
+```
+stack ghci stack-template:test:stack-template-test
+```
+
+* IDE :
+
+```
+ghcid --command "stack ghci stack-template:test:stack-template-test"
+```
+
+Use specific target to use `ghcid` on tests or benchmark.
+
+* Build :
+```
+stack build
+```
+
+* Run :
+```
+stack exec hello
+```
+
+* Build and run :
+```
+stack build --exec hello
+```
+
+* Test :
+```
+stack test
+```
+
+* Benchmark :
+```
+stack bench --ba "--output bench.html"
+```
+
+On Windows, `criterion` uses  unicode characters that causes a problem (stackoverflow)[Stack error when running benchmarks]
+
+Workaround :
+```
+chcp 65001
+```
+
+* Profiling :
+
+```
+stack --work-dir .stack-work-profile  build --profile
+```
+
+```
+stack --work-dir .stack-work-profile exec --profile  -- hello +RTS -p
+```

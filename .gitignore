@@ -1,0 +1,8 @@
+.stack-work/
+.stack-work-profile/
+dist-newstyle
+*~
+.vscode/
+.DS_Store
+bench.html
+*.prof
