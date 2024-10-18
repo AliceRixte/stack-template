@@ -159,10 +159,14 @@ stack bench --ba "--output bench.html"
 
 On Windows, `criterion` uses  unicode characters that causes a problem (see [stackoverflow](https://stackoverflow.com/questions/78173087/stack-error-when-running-benchmarks-tasty-bench)).
 
+
+
 Workaround :
 ```
 chcp 65001
 ```
+
+Another work around, which has some caveats is given in [stackoverflow](https://stackoverflow.com/questions/57131654/using-utf-8-encoding-chcp-65001-in-command-prompt-windows-powershell-window)
 
 ### Profiling :
 
