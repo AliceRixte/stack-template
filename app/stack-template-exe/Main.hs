@@ -2,7 +2,7 @@ module Main
   ( module Main
   ) where
 
-import Lib
+import Hello
 
 main :: IO ()
 main = sayHello

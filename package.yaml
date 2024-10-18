@@ -47,13 +47,20 @@ default-extensions:
 library:
   ghc-options:
   - -O1
-
   source-dirs: src
 
 executables:
-  hello:
-    main:                hello.hs
-    source-dirs:         app
+  stack-template-exe:
+    main:                Main.hs
+    source-dirs:         app/stack-template-exe
+    ghc-options:
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - stack-template
+  world:
+    main:                Main.hs
+    source-dirs:         app/world
     ghc-options:
     - -rtsopts
     - -with-rtsopts=-N
@@ -62,25 +69,27 @@ executables:
 
 tests:
   stack-template-test:
-    main:                Spec.hs
-    dependencies:
-    - stack-template
-    - hspec >= 2.11
-    - QuickCheck >= 2.14.3
+    main:                Main.hs
     source-dirs:         test
     ghc-options:
       - -O0
       - -rtsopts
       - -with-rtsopts=-N
+    dependencies:
+      - stack-template
+      - hspec >= 2.11
+      - QuickCheck >= 2.14.3
+
 
 benchmarks:
   stack-template-bench:
     main: Main.hs
-    dependencies:
-      - stack-template
-      - criterion >= 1.6
+
     source-dirs: benchmark
     ghc-options:
       - -O2
       - -rtsopts
       - -with-rtsopts=-N
+    dependencies:
+      - stack-template
+      - criterion >= 1.6

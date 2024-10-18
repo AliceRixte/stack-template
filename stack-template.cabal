@@ -25,7 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Hello
   other-modules:
       Paths_stack_template
   hs-source-dirs:
@@ -37,12 +37,26 @@ library
       base >=4.18 && <5
   default-language: Haskell2010
 
-executable hello
-  main-is: hello.hs
+executable stack-template-exe
+  main-is: Main.hs
   other-modules:
       Paths_stack_template
   hs-source-dirs:
-      app
+      app/stack-template-exe
+  default-extensions:
+      GeneralizedNewtypeDeriving
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.18 && <5
+    , stack-template
+  default-language: Haskell2010
+
+executable world
+  main-is: Main.hs
+  other-modules:
+      Paths_stack_template
+  hs-source-dirs:
+      app/world
   default-extensions:
       GeneralizedNewtypeDeriving
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
@@ -53,7 +67,7 @@ executable hello
 
 test-suite stack-template-test
   type: exitcode-stdio-1.0
-  main-is: Spec.hs
+  main-is: Main.hs
   other-modules:
       Paths_stack_template
   hs-source-dirs:
