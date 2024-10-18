@@ -157,7 +157,7 @@ Use specific target to use `ghcid` on tests or benchmark.
 stack bench --ba "--output bench.html"
 ```
 
-On Windows, `criterion` uses  unicode characters that causes a problem (see [stackoverflow](https://stackoverflow.com/questions/57924638/stack-run-with-profiling-in-haskell)).
+On Windows, `criterion` uses  unicode characters that causes a problem (see [stackoverflow](https://stackoverflow.com/questions/78173087/stack-error-when-running-benchmarks-tasty-bench)).
 
 Workaround :
 ```
