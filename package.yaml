@@ -28,7 +28,8 @@ ghc-options:
   - -threaded
 
 default-extensions:
-  - GeneralizedNewtypeDeriving
+  # - GeneralizedNewtypeDeriving
+  - OverloadedStrings
   # - FunctionalDependencies
   # - MultiParamTypeClasses
   # - FlexibleContexts
