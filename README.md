@@ -97,7 +97,10 @@ make ghci-bench bch=stack-template-bench
 
 ```
 make ide
-make ide exe=world
+
+
+make ide-exe
+make ide-exe exe=world
 
 make ide-test
 make ide-test tst=stack-template-test
