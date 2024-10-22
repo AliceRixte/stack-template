@@ -21,7 +21,7 @@ build:
 	$(stack) build $(pkg):$(trg)
 
 run:
-		$(stack) build --fast $(pkg):$(exe):exe  && $(stack) exec $(exe)
+	$(stack) build --fast $(pkg):exe:$(exe)  && $(stack) exec $(exe)
 
 targets:
 	$(stack) ide targets
@@ -64,7 +64,10 @@ prof-bench:
 # GHCi
 
 ghci:
-	$(stack) ghci $(pkg):$(trg)
+	$(stack) ghci
+
+ghci-exe:
+	$(stack) ghci $(pkg):$(trg) --test --main-is $(pkg):$(exe)
 
 ghci-test:
 	$(stack) ghci $(pkg):test:$(tst)
@@ -75,7 +78,7 @@ ghci-bench:
 # GHCid
 
 ide:
-	$(stack) exec -- ghcid -c "stack ghci $(pkg):$(trg) --test "
+	ghcid --command="stack ghci"
 
 ide-exe:
 	$(stack) exec -- ghcid -c "stack ghci $(pkg):$(trg) --test --main-is $(pkg):$(exe)"
@@ -87,4 +90,4 @@ ide-bench:
 	$(stack) exec -- ghcid -c "stack ghci $(pkg):bench:$(bch) --test"
 
 
-.PHONY : build run targets clean clean-hard bench test prof prof-test prof-bench ghci ghci-test ghci-bench ide ide-test ide-bench
+.PHONY : build run targets clean clean-hard bench test prof prof-test prof-bench ghci ghci-exe ghci-test ghci-bench ide ide-exe ide-test ide-bench
