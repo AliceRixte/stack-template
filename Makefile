@@ -42,6 +42,9 @@ bench:
 test:
 	$(stack) test $(pkg):test:$(tst)
 
+doc :
+	$(stack) haddock --no-haddock-deps
+
 install:
 	$(stack) install $(pkg)
 
