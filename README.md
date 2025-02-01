@@ -132,6 +132,13 @@ stack build --exec hello
 stack test
 ```
 
+With coverage :
+
+```
+stack test --coverage
+```
+
+
 ### Specific targets :
 
 Find out about all the targets :
