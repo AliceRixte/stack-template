@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.36.0.
+-- This file has been generated from package.yaml by hpack version 0.37.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -30,8 +30,6 @@ library
       Paths_stack_template
   hs-source-dirs:
       src
-  default-extensions:
-      GeneralizedNewtypeDeriving
   ghc-options: -Wall -threaded -O1
   build-depends:
       base >=4.18 && <5
@@ -43,8 +41,6 @@ executable stack-template-exe
       Paths_stack_template
   hs-source-dirs:
       app/stack-template-exe
-  default-extensions:
-      GeneralizedNewtypeDeriving
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.18 && <5
@@ -57,8 +53,6 @@ executable world
       Paths_stack_template
   hs-source-dirs:
       app/world
-  default-extensions:
-      GeneralizedNewtypeDeriving
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.18 && <5
@@ -72,8 +66,6 @@ test-suite stack-template-test
       Paths_stack_template
   hs-source-dirs:
       test
-  default-extensions:
-      GeneralizedNewtypeDeriving
   ghc-options: -Wall -threaded -O0 -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck >=2.14.3
@@ -89,8 +81,6 @@ benchmark stack-template-bench
       Paths_stack_template
   hs-source-dirs:
       benchmark
-  default-extensions:
-      GeneralizedNewtypeDeriving
   ghc-options: -Wall -threaded -O2 -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.18 && <5

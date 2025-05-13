@@ -1,6 +1,9 @@
 # The following variables can be set in command line. For instance : "make run
 # exe=myExe"
-pkg = stack-template
+
+mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+current_dir := $(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
+pkg = $(current_dir)
 trg = lib
 exe = $(pkg)-exe
 tst = $(pkg)-test
